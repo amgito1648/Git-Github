@@ -11,5 +11,12 @@ Route::get('/landing', function () {
     return view('landing');
 });
 
-// Ruta para la página de detalles de un producto
-Route::get('/detalles/{id}', [ProductoController::class, 'mostrarDetalles'])->name('detalles');
+Route::get('/detalles', function () {
+    return view('detalles');
+
+ });   
+
+ Route::get('/carritocompras', function () {
+    return view('carritocompras');
+
+ });   
