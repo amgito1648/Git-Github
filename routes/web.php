@@ -1,17 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\ProductoController; // Correcta importación del controlador
 
 // Ruta principal que usa el controlador LandingController
 Route::get('/', 'LandingController@index');
@@ -20,3 +10,6 @@ Route::get('/', 'LandingController@index');
 Route::get('/landing', function () {
     return view('landing');
 });
+
+// Ruta para la página de detalles de un producto
+Route::get('/detalles/{id}', [ProductoController::class, 'mostrarDetalles'])->name('detalles');
