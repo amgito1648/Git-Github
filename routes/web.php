@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Ruta principal que usa el controlador LandingController
+Route::get('/', 'LandingController@index');
+
+// Ruta para la página landing, que muestra la vista 'landing'
+Route::get('/landing', function () {
+    return view('landing');
 });
